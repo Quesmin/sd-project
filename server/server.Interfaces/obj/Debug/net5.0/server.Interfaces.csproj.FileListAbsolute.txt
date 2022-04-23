@@ -1,0 +1,15 @@
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\server.Interfaces.deps.json
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\server.Interfaces.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\ref\server.Interfaces.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\server.Interfaces.pdb
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\server.Common.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\bin\Debug\net5.0\server.Common.pdb
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.AssemblyInfo.cs
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.csproj.CopyComplete
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\ref\server.Interfaces.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Interfaces\obj\Debug\net5.0\server.Interfaces.pdb

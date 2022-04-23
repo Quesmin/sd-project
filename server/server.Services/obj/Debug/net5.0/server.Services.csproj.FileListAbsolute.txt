@@ -1,0 +1,17 @@
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Services.deps.json
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Services.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\ref\server.Services.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Services.pdb
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Common.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Interfaces.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Interfaces.pdb
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Common.pdb
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.csproj.AssemblyReference.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.AssemblyInfoInputs.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.AssemblyInfo.cs
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.csproj.CoreCompileInputs.cache
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.csproj.CopyComplete
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\ref\server.Services.dll
+C:\Users\Cosmin\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.pdb
