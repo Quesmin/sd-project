@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Cosmin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Cosmin\\.nuget\\packages"
+      "C:\\Users\\cosmi\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\cosmi\\.nuget\\packages"
     ]
   }
 }

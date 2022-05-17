@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Cosmin\\.nuget\\packages\\": {}
+    "C:\\Users\\cosmi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cosmin\\Desktop\\sd-project\\server\\server.Common\\server.Common.csproj",
+      "projectUniqueName": "C:\\Users\\cosmi\\Desktop\\sd-project\\server\\server.Common\\server.Common.csproj",
       "projectName": "server.Common",
-      "projectPath": "C:\\Users\\Cosmin\\Desktop\\sd-project\\server\\server.Common\\server.Common.csproj",
-      "packagesPath": "C:\\Users\\Cosmin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cosmin\\Desktop\\sd-project\\server\\server.Common\\obj\\",
+      "projectPath": "C:\\Users\\cosmi\\Desktop\\sd-project\\server\\server.Common\\server.Common.csproj",
+      "packagesPath": "C:\\Users\\cosmi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cosmi\\Desktop\\sd-project\\server\\server.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cosmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cosmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

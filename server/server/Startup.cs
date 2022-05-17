@@ -8,12 +8,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using server.API.MiddlewareExtensions;
+using server.Data;
 using server.Interfaces;
 using server.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.EntityFrameworkCore;
 
 namespace server
 {
@@ -29,7 +32,12 @@ namespace server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = "server=localhost;user=root;password=root;database=sd-project";
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 
+            services.AddDbContext<DataContext>(options => 
+                options.UseMySql(connectionString, serverVersion)
+            );
             services.InjectServices();
             services.AddControllers();
             services.AddSwaggerGen(c =>

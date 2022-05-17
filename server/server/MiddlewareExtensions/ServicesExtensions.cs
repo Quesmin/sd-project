@@ -13,6 +13,7 @@ namespace server.API.MiddlewareExtensions
         public static void InjectServices(this IServiceCollection services)
         {
             services.AddTransient<IManufacturerService, ManufacturerService>();
+            services.AddTransient<IUserService, UserService>();
         }
     }
 }

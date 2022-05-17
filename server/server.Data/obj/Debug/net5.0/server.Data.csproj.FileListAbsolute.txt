@@ -1,0 +1,15 @@
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\bin\Debug\net5.0\server.Data.deps.json
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\bin\Debug\net5.0\server.Data.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\bin\Debug\net5.0\server.Data.pdb
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\bin\Debug\net5.0\server.Common.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\bin\Debug\net5.0\server.Common.pdb
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.csproj.AssemblyReference.cache
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.AssemblyInfoInputs.cache
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.AssemblyInfo.cs
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.csproj.CoreCompileInputs.cache
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.csproj.CopyComplete
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\refint\server.Data.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\server.Data.pdb
+C:\Users\cosmi\Desktop\sd-project\server\server.Data\obj\Debug\net5.0\ref\server.Data.dll
