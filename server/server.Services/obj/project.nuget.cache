@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2tyveEz01vL3TOrFqI1qNd0rGyxfHWqvS/UN1Fl2SZrEIR3k2IGFIxKtktZ9aGttLYL5ORsgNhL1rzAhcXd7Vg==",
+  "dgSpecHash": "9OqHWxIDVFru2/W4H3T3V7IhSzdtIo2Zm976+nvEs7dXVtV0sEFoTiP5lMXZ0H2ueXEPx40QAyQk5lXh99UY6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\cosmi\\Desktop\\sd-project\\server\\server.Services\\server.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cosmi\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.17\\microsoft.entityframeworkcore.5.0.17.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.17\\microsoft.entityframeworkcore.abstractions.5.0.17.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.17\\microsoft.entityframeworkcore.analyzers.5.0.17.nupkg.sha512",

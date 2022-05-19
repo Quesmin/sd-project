@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\server.Data\server.Data.csproj" />
     <ProjectReference Include="..\server.Interfaces\server.Interfaces.csproj" />
   </ItemGroup>

@@ -16,10 +16,35 @@ namespace server.API.Controllers
             _userService = userService;
         }
         [HttpPost]
+        [Route("login")]
+        public IActionResult Login([FromBody] CreateUserDto userDto)
+        {
+            var user = _userService.Login(userDto);
+
+            if(user == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(user);
+        }
+        [HttpPost]
+        [Route("register")]
+        public async Task<IActionResult> Register([FromBody] CreateUserDto userDto)
+        {
+            var user = await _userService.Register(userDto);
+
+            if (user == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(user);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] CreateUserDto user)
         {
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
-            user.Password = passwordHash;
             return Ok(await _userService.AddAsync(user));
         }
 

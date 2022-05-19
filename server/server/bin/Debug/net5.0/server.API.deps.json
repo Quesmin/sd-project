@@ -599,6 +599,7 @@
       },
       "server.Services/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "server.Data": "1.0.0",
           "server.Interfaces": "1.0.0"
         },

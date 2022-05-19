@@ -1,5 +1,7 @@
-﻿using server.Common.Dtos.Favorite;
+﻿using Microsoft.EntityFrameworkCore;
+using server.Common.Dtos.Favorite;
 using server.Common.Entities;
+using server.Data;
 using server.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,19 +13,44 @@ namespace server.Services
 {
     public class FavoriteService : IFavoriteService
     {
-        public Task<Favorite> AddFavorite(CreateFavoriteDto favoriteDto)
+
+        private readonly DataContext _context;
+
+        public FavoriteService(DataContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<Favorite> AddFavorite(CreateFavoriteDto favoriteDto)
+        {
+            var car = _context.Cars.FirstOrDefault(e => e.Id == favoriteDto.CarId);
+            var user = _context.Users.FirstOrDefault(e => e.Id == favoriteDto.UserId);
+
+            if (car == null || user == null)
+            {
+                return null;
+            }
+
+            var favorite = new Favorite
+            {
+                User = user,
+                Car = car,
+                Date = favoriteDto.Date
+            };
+
+            await _context.AddAsync(favorite);
+            await _context.SaveChangesAsync();
+
+            return favorite;
         }
 
-        public Task<IEnumerable<Favorite>> GetAll()
+        public async Task<IEnumerable<Favorite>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Favorites.ToListAsync();
         }
 
         public Favorite GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Favorites.FirstOrDefault(e => e.Id == id);
         }
     }
 }

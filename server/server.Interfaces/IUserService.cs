@@ -10,6 +10,8 @@ namespace server.Interfaces
 {
     public interface IUserService
     {
+        User Login(CreateUserDto userDto);
+        Task<User> Register(CreateUserDto userDto);
         User GetById(int id);
         Task<IEnumerable<User>> GetAll();
         Task<User> AddAsync(CreateUserDto userDto);
