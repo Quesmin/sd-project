@@ -18,7 +18,8 @@ namespace server.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] CreateUserDto user)
         {
-            string passwordHash = BCrypt.Encrypt(user.Password);
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Password = passwordHash;
             return Ok(await _userService.AddAsync(user));
         }
 
@@ -26,6 +27,20 @@ namespace server.API.Controllers
         public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _userService.GetAll());
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var user = _userService.GetById(id);
+
+            if(user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
     }

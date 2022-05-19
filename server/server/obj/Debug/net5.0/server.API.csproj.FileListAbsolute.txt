@@ -79,3 +79,4 @@ C:\Users\cosmi\Desktop\sd-project\server\server\obj\Debug\net5.0\refint\server.A
 C:\Users\cosmi\Desktop\sd-project\server\server\obj\Debug\net5.0\server.API.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server\obj\Debug\net5.0\server.API.genruntimeconfig.cache
 C:\Users\cosmi\Desktop\sd-project\server\server\obj\Debug\net5.0\ref\server.API.dll
+C:\Users\cosmi\Desktop\sd-project\server\server\bin\Debug\net5.0\BCrypt.Net-Next.dll

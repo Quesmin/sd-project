@@ -42,9 +42,9 @@ namespace server.Services
                 .ToListAsync();
         }
 
-        public Task<User> GetById(int id)
+        public User GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Users.FirstOrDefault(e => e.Id == id);
         }
     }
 }

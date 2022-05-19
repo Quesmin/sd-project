@@ -26,9 +26,9 @@ namespace server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public Task<IActionResult> Get()
         {
-            return  Ok(await _manufacturerService.GetById(5));
+            return  null;
         }
     }
 }

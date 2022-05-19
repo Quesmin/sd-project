@@ -14,6 +14,10 @@ namespace server.API.MiddlewareExtensions
         {
             services.AddTransient<IManufacturerService, ManufacturerService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IAppointmentService, AppointmentService>();
+            services.AddTransient<ICarService, CarService>();
+            services.AddTransient<IFavoriteService, FavoriteService>();
+
         }
     }
 }

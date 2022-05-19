@@ -10,7 +10,7 @@ namespace server.Interfaces
 {
     public interface IUserService
     {
-        Task<User> GetById(int id);
+        User GetById(int id);
         Task<IEnumerable<User>> GetAll();
         Task<User> AddAsync(CreateUserDto userDto);
 

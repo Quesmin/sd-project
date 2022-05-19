@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace server.Common.Entities
 {
-    internal class Favorite
+    public class Favorite
     {
         public int Id { get; set; }
         public User User { get; set; }

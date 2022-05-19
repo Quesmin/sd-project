@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace server.Common.Entities
 {
-    internal class Appointment
+    public class Appointment
     {
         public int Id { get; set; }
         public User User { get; set; }
