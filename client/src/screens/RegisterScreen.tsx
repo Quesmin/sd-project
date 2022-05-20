@@ -31,7 +31,7 @@ const LoginScreen = () => {
       if (user.user.isAdmin) {
         navigate("/admin-dashboard");
       } else {
-        navigate("/dashboard");
+        navigate("/dashboard/cars");
       }
     }
   }, [user.isLoggedIn]);
