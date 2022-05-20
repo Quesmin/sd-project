@@ -60,6 +60,12 @@ namespace server
 
             app.UseRouting();
 
+            app.UseCors(x => { 
+                x.AllowAnyOrigin();
+                x.AllowAnyHeader();
+                x.AllowAnyMethod();
+            });
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

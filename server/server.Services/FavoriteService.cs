@@ -43,6 +43,19 @@ namespace server.Services
             return favorite;
         }
 
+        public async Task<Favorite> Delete(int id)
+        {
+            var favorite = _context.Favorites.FirstOrDefault(x => x.Id == id);
+            if (favorite == null)
+            {
+                return null;
+            }
+            _context.Remove(favorite);
+            await _context.SaveChangesAsync();
+
+            return favorite;
+        }
+
         public async Task<IEnumerable<Favorite>> GetAll()
         {
             return await _context.Favorites.ToListAsync();
@@ -51,6 +64,20 @@ namespace server.Services
         public Favorite GetById(int id)
         {
             return _context.Favorites.FirstOrDefault(e => e.Id == id);
+        }
+
+        public async Task<Favorite> Update(int id, CreateFavoriteDto favoriteDto)
+        {
+            var favorite = _context.Favorites.FirstOrDefault(e => e.Id == id);
+            if (favorite == null)
+            {
+                return null;
+            }
+
+            _context.Entry(favorite).CurrentValues.SetValues(favoriteDto);
+            await _context.SaveChangesAsync();
+
+            return favorite;
         }
     }
 }

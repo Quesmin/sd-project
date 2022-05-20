@@ -15,6 +15,9 @@ namespace server.Interfaces
         User GetById(int id);
         Task<IEnumerable<User>> GetAll();
         Task<User> AddAsync(CreateUserDto userDto);
+        Task<User> Update(int id, CreateUserDto userDto);
+
+        Task<User> Delete(int id);
 
     }
 }

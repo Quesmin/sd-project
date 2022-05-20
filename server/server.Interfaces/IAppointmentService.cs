@@ -13,5 +13,8 @@ namespace server.Interfaces
         Appointment GetById(int id);
         Task<Appointment> AddAppointment(CreateAppointmentDto appointmentDto);
         Task<IEnumerable<Appointment>> GetAll();
+        Task<Appointment> Update(int id, CreateAppointmentDto appointmentDto);
+
+        Task<Appointment> Delete(int id);
     }
 }

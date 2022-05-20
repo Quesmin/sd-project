@@ -13,5 +13,9 @@ namespace server.Interfaces
         Favorite GetById(int id);
         Task<Favorite> AddFavorite(CreateFavoriteDto favoriteDto);
         Task<IEnumerable<Favorite>> GetAll();
+
+        Task<Favorite> Update(int id, CreateFavoriteDto favoriteDto);
+
+        Task<Favorite> Delete(int id);
     }
 }

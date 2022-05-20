@@ -43,5 +43,29 @@ namespace server.API.Controllers
         {
             return Ok(await _appointmentService.AddAppointment(appointmentDto));
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var appointment = await _appointmentService.Delete(id);
+            if (appointment == null)
+            {
+                return BadRequest();
+            }
+            return Ok(appointment);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateAppointmentDto appointmentDto)
+        {
+            var appointment = await _appointmentService.Update(id, appointmentDto);
+            if (appointment == null)
+            {
+                return BadRequest();
+            }
+            return Ok(appointment);
+        }
     }
 }

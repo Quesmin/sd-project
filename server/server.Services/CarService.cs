@@ -48,6 +48,19 @@ namespace server.Services
             return car;
         }
 
+        public async Task<Car> Delete(int id)
+        {
+            var car = _context.Cars.FirstOrDefault(x => x.Id == id);
+            if (car == null)
+            {
+                return null;
+            }
+            _context.Remove(car);
+            await _context.SaveChangesAsync();
+
+            return car;
+        }
+
         public async Task<IEnumerable<Car>> GetAll()
         {
             return await _context.Cars.ToListAsync();
@@ -56,6 +69,20 @@ namespace server.Services
         public Car GetById(int id)
         {
             return _context.Cars.FirstOrDefault(e => e.Id == id);
+        }
+
+        public async Task<Car> Update(int id, CreateCarDto carDto)
+        {
+            var car = _context.Cars.FirstOrDefault(e => e.Id == id);
+            if (car == null)
+            {
+                return null;
+            }
+
+            _context.Entry(car).CurrentValues.SetValues(carDto);
+            await _context.SaveChangesAsync();
+
+            return car;
         }
     }
 }

@@ -68,5 +68,29 @@ namespace server.API.Controllers
             return Ok(user);
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = await _userService.Delete(id);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            return Ok(user);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateUserDto userDto)
+        {
+            var user = await _userService.Update(id, userDto);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            return Ok(user);
+        }
+
     }
 }

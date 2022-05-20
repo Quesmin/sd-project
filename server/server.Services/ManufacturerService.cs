@@ -33,6 +33,19 @@ namespace server.Services
             return manufacturer;
         }
 
+        public async Task<Manufacturer> Delete(int id)
+        {
+            var manufacturer = _context.Manufacturers.FirstOrDefault(x => x.Id == id);
+            if (manufacturer == null) 
+            {
+                return null;
+            }
+            _context.Remove(manufacturer);
+            await _context.SaveChangesAsync();
+
+            return manufacturer;
+        }
+
         public async Task<IEnumerable<Manufacturer>> GetAll()
         {
             return await _context.Manufacturers.ToListAsync();
@@ -43,5 +56,18 @@ namespace server.Services
             return _context.Manufacturers.FirstOrDefault(e => e.Id == id);
         }
 
+        public async Task<Manufacturer> Update(int id, CreateManufacturerDto manufacturerDto)
+        {
+            var manufacturer = _context.Manufacturers.FirstOrDefault(e => e.Id == id);
+            if (manufacturer == null)
+            {
+                return null;
+            }
+
+            _context.Entry(manufacturer).CurrentValues.SetValues(manufacturerDto);
+            await _context.SaveChangesAsync();
+
+            return manufacturer;
+        }
     }
 }

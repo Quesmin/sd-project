@@ -14,5 +14,9 @@ namespace server.Interfaces
         Car GetById(int id);
         Task<Car> AddCar(CreateCarDto carDto);
         Task<IEnumerable<Car>> GetAll();
+
+        Task<Car> Update(int id, CreateCarDto carDto);
+
+        Task<Car> Delete(int id);
     }
 }

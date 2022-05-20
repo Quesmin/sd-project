@@ -14,5 +14,10 @@ namespace server.Interfaces
         Task<Manufacturer> AddManufacturer(CreateManufacturerDto manufacturerName);
         Task<IEnumerable<Manufacturer>> GetAll();
 
+        Task<Manufacturer> Update(int id, CreateManufacturerDto manufacturerDto);
+
+        Task<Manufacturer> Delete(int id);
+
+
     }
 }

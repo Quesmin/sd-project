@@ -28,8 +28,9 @@ namespace server.Services
 
             if (trimmedEmail.EndsWith("."))
             {
-                return false; // suggested by @TK-421
+                return false;
             }
+
             try
             {
                 var addr = new System.Net.Mail.MailAddress(email);
@@ -122,6 +123,33 @@ namespace server.Services
         public User GetById(int id)
         {
             return _context.Users.FirstOrDefault(e => e.Id == id);
+        }
+
+        public async Task<User> Update(int id, CreateUserDto userDto)
+        {
+            var user = _context.Users.FirstOrDefault(e => e.Id == id);
+            if (user == null)
+            {
+                return null;
+            }
+
+            _context.Entry(user).CurrentValues.SetValues(userDto);
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
+
+        public async Task<User> Delete(int id)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return null;
+            }
+            _context.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return user;
         }
     }
 }

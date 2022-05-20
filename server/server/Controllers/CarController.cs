@@ -43,5 +43,29 @@ namespace server.API.Controllers
         {
             return Ok(await _carService.AddCar(carDto));
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var car = await _carService.Delete(id);
+            if (car == null)
+            {
+                return BadRequest();
+            }
+            return Ok(car);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateCarDto carDto)
+        {
+            var car = await _carService.Update(id, carDto);
+            if (car == null)
+            {
+                return BadRequest();
+            }
+            return Ok(car);
+        }
     }
 }

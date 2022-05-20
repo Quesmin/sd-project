@@ -46,6 +46,30 @@ namespace server.API.Controllers
             return Ok(await _manufacturerService.AddManufacturer(manufacturerDto));
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var manufacturer = await _manufacturerService.Delete(id);
+            if(manufacturer == null)
+            {
+                return BadRequest();
+            }
+            return Ok(manufacturer);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateManufacturerDto manufacturerDto)
+        {
+            var manufacturer = await _manufacturerService.Update(id, manufacturerDto);
+            if (manufacturer == null)
+            {
+                return BadRequest();
+            }
+            return Ok(manufacturer);
+        }
+
 
     }
 }

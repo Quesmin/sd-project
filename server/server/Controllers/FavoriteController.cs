@@ -43,5 +43,29 @@ namespace server.API.Controllers
         {
             return Ok(await _favoriteService.AddFavorite(favoriteDto));
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var favorite = await _favoriteService.Delete(id);
+            if (favorite == null)
+            {
+                return BadRequest();
+            }
+            return Ok(favorite);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateFavoriteDto favoriteDto)
+        {
+            var favorite = await _favoriteService.Update(id, favoriteDto);
+            if (favorite == null)
+            {
+                return BadRequest();
+            }
+            return Ok(favorite);
+        }
     }
 }

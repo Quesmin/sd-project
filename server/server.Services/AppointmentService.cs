@@ -44,6 +44,19 @@ namespace server.Services
             return appointment;
         }
 
+        public async Task<Appointment> Delete(int id)
+        {
+            var appointment = _context.Appointments.FirstOrDefault(x => x.Id == id);
+            if (appointment == null)
+            {
+                return null;
+            }
+            _context.Remove(appointment);
+            await _context.SaveChangesAsync();
+
+            return appointment;
+        }
+
         public async Task<IEnumerable<Appointment>> GetAll()
         {
             return await _context.Appointments.ToListAsync();
@@ -52,6 +65,20 @@ namespace server.Services
         public Appointment GetById(int id)
         {
             return _context.Appointments.FirstOrDefault(e => e.Id == id);
+        }
+
+        public async Task<Appointment> Update(int id, CreateAppointmentDto appointmentDto)
+        {
+            var appointment = _context.Appointments.FirstOrDefault(e => e.Id == id);
+            if (appointment == null)
+            {
+                return null;
+            }
+
+            _context.Entry(appointment).CurrentValues.SetValues(appointmentDto);
+            await _context.SaveChangesAsync();
+
+            return appointment;
         }
     }
 }
