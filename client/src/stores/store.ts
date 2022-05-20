@@ -10,11 +10,14 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
+import { CarReducer } from "./car/slice";
+import { CarState } from "./car/state";
 import { UserReducer } from "./user/slice";
 import { UserState } from "./user/state";
 
 export interface RootState {
   user: UserState;
+  car: CarState;
 }
 
 const userPersistConfig = {
@@ -24,6 +27,7 @@ const userPersistConfig = {
 const store = configureStore({
   reducer: combineReducers<RootState>({
     user: persistReducer(userPersistConfig, UserReducer as Reducer),
+    car: CarReducer,
   }),
   middleware: [thunk],
 });

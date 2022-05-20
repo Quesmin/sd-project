@@ -16,6 +16,14 @@ namespace server.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Favorite> Favorites { get; set; }  
 
+        protected override  void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Car>().Navigation(e => e.Manufacturer).AutoInclude();
+            modelBuilder.Entity<Appointment>().Navigation(e => e.Car).AutoInclude();
+            modelBuilder.Entity<Appointment>().Navigation(e => e.User).AutoInclude();
+            modelBuilder.Entity<Favorite>().Navigation(e => e.User).AutoInclude();
+            modelBuilder.Entity<Favorite>().Navigation(e => e.Car).AutoInclude();
+        }
 
 
         public DataContext():base()

@@ -71,6 +71,9 @@ namespace server.Data.Migrations
                     b.Property<string>("Model")
                         .HasColumnType("longtext");
 
+                    b.Property<uint>("Price")
+                        .HasColumnType("int unsigned");
+
                     b.Property<int>("Seats")
                         .HasColumnType("int");
 

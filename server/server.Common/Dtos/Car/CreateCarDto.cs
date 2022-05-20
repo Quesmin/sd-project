@@ -18,6 +18,7 @@ namespace server.Common.Dtos.Car
         public string VIN { get; set; }
         public int HP { get; set; }
         public uint YearOfManufacture { get; set; }
+        public uint Price { get; set; }
         public FuelType FuelType { get; set; }
     }
 }

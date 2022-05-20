@@ -46,7 +46,7 @@ namespace server.Services
 
         public async Task<Appointment> Delete(int id)
         {
-            var appointment = _context.Appointments.FirstOrDefault(x => x.Id == id);
+            var appointment = _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(x => x.Id == id);
             if (appointment == null)
             {
                 return null;
@@ -59,17 +59,17 @@ namespace server.Services
 
         public async Task<IEnumerable<Appointment>> GetAll()
         {
-            return await _context.Appointments.ToListAsync();
+            return await _context.Appointments.Include(e => e.Car).Include(e => e.User).ToListAsync();
         }
 
         public Appointment GetById(int id)
         {
-            return _context.Appointments.FirstOrDefault(e => e.Id == id);
+            return _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(e => e.Id == id);
         }
 
         public async Task<Appointment> Update(int id, CreateAppointmentDto appointmentDto)
         {
-            var appointment = _context.Appointments.FirstOrDefault(e => e.Id == id);
+            var appointment = _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(e => e.Id == id);
             if (appointment == null)
             {
                 return null;

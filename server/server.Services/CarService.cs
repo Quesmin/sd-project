@@ -39,6 +39,7 @@ namespace server.Services
                 VIN = carDto.VIN,
                 HP = carDto.HP,
                 YearOfManufacture = carDto.YearOfManufacture,
+                Price = carDto.Price,
                 FuelType = carDto.FuelType,
             };
 
@@ -73,7 +74,7 @@ namespace server.Services
 
         public async Task<Car> Update(int id, CreateCarDto carDto)
         {
-            var car = _context.Cars.FirstOrDefault(e => e.Id == id);
+            var car = _context.Cars.Include(e => e.Manufacturer).FirstOrDefault(e => e.Id == id);
             if (car == null)
             {
                 return null;
