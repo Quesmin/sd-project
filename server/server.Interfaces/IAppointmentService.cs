@@ -16,5 +16,7 @@ namespace server.Interfaces
         Task<Appointment> Update(int id, CreateAppointmentDto appointmentDto);
 
         Task<Appointment> Delete(int id);
+
+        IEnumerable<Appointment> GetByUserId(int userId);
     }
 }

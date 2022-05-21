@@ -66,6 +66,18 @@ namespace server.Services
             return _context.Favorites.FirstOrDefault(e => e.Id == id);
         }
 
+        public IEnumerable<Favorite> GetByUserId(int userId)
+        {
+            var user = _context.Users.FirstOrDefault();
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return _context.Favorites.Where(e => e.User.Id == userId).ToList();
+        }
+
         public async Task<Favorite> Update(int id, CreateFavoriteDto favoriteDto)
         {
             var favorite = _context.Favorites.FirstOrDefault(e => e.Id == id);

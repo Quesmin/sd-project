@@ -31,6 +31,19 @@ namespace server.API.Controllers
         }
 
         [HttpGet]
+        [Route("user/{id}")]
+        public IActionResult GetByUserId(int id)
+        {
+            var appointments = _appointmentService.GetByUserId(id);
+            if (appointments == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(appointments);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
 

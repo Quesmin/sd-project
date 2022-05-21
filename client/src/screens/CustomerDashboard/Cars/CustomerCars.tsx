@@ -9,20 +9,27 @@ import CarItem from "./CarItem/CarItem";
 
 const CustomerCars = () => {
   const cars = useAppSelector((state) => state.car.cars);
+  const searchCriteria = useAppSelector((state) => state.user.searchInput);
   if (!cars.length) {
-    return <></>;
+    return <>No data</>;
   }
 
   return (
     <Grid container spacing={4}>
-      {cars.map((car) => (
-        <CarItem
-          key={car.id}
-          id={car.id}
-          title={`${car.manufacturer.name} ${car.model}`}
-          description={`${car.price} EUR`}
-        />
-      ))}
+      {cars
+        .filter(
+          (e) =>
+            e.manufacturer.name.includes(searchCriteria) ||
+            e.model.includes(searchCriteria)
+        )
+        .map((car) => (
+          <CarItem
+            key={car.id}
+            id={car.id}
+            title={`${car.manufacturer.name} ${car.model}`}
+            description={`${car.price} EUR`}
+          />
+        ))}
     </Grid>
   );
 };

@@ -6,18 +6,18 @@ type Props = {
   element: JSX.Element;
 };
 
-const ProtectedRoute = (props: Props) => {
+const AdminRoute = (props: Props) => {
   const user = useAppSelector((state) => state.user);
 
   return user.isLoggedIn ? (
     user.user.isAdmin ? (
-      <Navigate to="/admin-dashboard" />
-    ) : (
       props.element
+    ) : (
+      <Navigate to="/dashboard/cars" />
     )
   ) : (
     <Navigate to="/login" />
   );
 };
 
-export default ProtectedRoute;
+export default AdminRoute;

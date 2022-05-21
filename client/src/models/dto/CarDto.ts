@@ -4,7 +4,7 @@ import { ManunfacturerDto } from "./ManufacturerDto";
 
 export interface CarDto {
   model: string;
-  manufacturer: ManunfacturerDto;
+  manufacturerId: number;
   body: BodyType;
   mileage: number;
   seats: number;

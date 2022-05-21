@@ -13,21 +13,53 @@ import {
 import Alert from "@mui/material/Alert";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  onSubmit: (phone: string, message: string, date: Date | null) => void;
 };
 
 const CarModal = (props: Props) => {
-  //   const dispatch = useDispatch();
-  //   const [name, setName] = React.useState("");
-  //   const [location, setLocation] = React.useState("");
-  //   const [deliveryZone, setDeliveryZone] = React.useState(deliveryZones[0]);
-  //   const adminId = useSelector<RootState, string>((state) => state.user.user.id);
-  //   const isInputError = useSelector<RootState, boolean>(
-  //     (state) => state.user.isInputError
-  //   );
+  const [phone, setPhone] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [date, setDate] = React.useState<Date | null>(new Date());
+  const [error, setError] = React.useState(false);
+
+  const handleSubmitAction = () => {
+    checkInputErrors();
+    clearInputs();
+    props.onSubmit(phone, message, date);
+    props.onClose();
+  };
+
+  const clearInputs = () => {
+    setDate(new Date());
+    setPhone("");
+    setMessage("");
+    setError(false);
+  };
+
+  const checkInputErrors = () => {
+    if (!phone || !message) {
+      setError(true);
+      return;
+    }
+
+    if (!date?.toUTCString()) {
+      setError(true);
+      return;
+    }
+
+    setError(false);
+  };
+
+  const handleClose = () => {
+    setError(false);
+    props.onClose();
+  };
+
   return (
     <Modal
       style={{
@@ -36,7 +68,7 @@ const CarModal = (props: Props) => {
         justifyContent: "center",
       }}
       open={props.isOpen}
-      onClose={props.onClose}
+      onClose={handleClose}
     >
       <Box
         sx={{
@@ -55,39 +87,36 @@ const CarModal = (props: Props) => {
           Make an appointment
         </Typography>
 
+        <DateTimePicker
+          disablePast
+          ampm={false}
+          label="Date&Time picker"
+          value={date}
+          onChange={setDate}
+          renderInput={(params) => <TextField {...params} />}
+        />
+
         <TextField
-          sx={{ marginBottom: 2 }}
-          label="Name"
+          sx={{ marginBottom: 2, marginTop: 2 }}
+          label="Phone"
           variant="outlined"
-          value={name}
+          value={phone}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setName(event.target.value)
+            setPhone(event.target.value)
           }
         />
         <TextField
           sx={{ marginBottom: 2 }}
-          label="Location"
+          label="Message"
+          multiline
+          rows={5}
           variant="outlined"
-          value={location}
+          value={message}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setLocation(event.target.value)
+            setMessage(event.target.value)
           }
         />
-        <FormControl sx={{ display: "flex" }}>
-          <InputLabel>Delivery Zone</InputLabel>
-          <Select
-            value={deliveryZone}
-            label="Delivery Zone"
-            onChange={(event: SelectChangeEvent) =>
-              setDeliveryZone(event.target.value)
-            }
-          >
-            {deliveryZones.map((item) => (
-              <MenuItem value={item}>{item}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        {isInputError && (
+        {error && (
           <Alert severity="error">
             Invalid input data. Please check it again!
           </Alert>
@@ -96,9 +125,7 @@ const CarModal = (props: Props) => {
           sx={{ marginTop: 2, textTransform: "none" }}
           variant="contained"
           color="primary"
-          onClick={() => {
-            dispatch(addRestaurant(name, location, adminId, props.onClose));
-          }}
+          onClick={handleSubmitAction}
         >
           Submit
         </Button>

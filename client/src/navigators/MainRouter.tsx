@@ -6,6 +6,8 @@ import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import ProtectedRoute from "./ProtectedRoute";
 import CustomerDashboard from "../screens/CustomerDashboard/CustomerDashboard";
+import AdminRoute from "./AdminRoute";
+import { Typography } from "@mui/material";
 
 interface Props {}
 
@@ -20,9 +22,10 @@ function MainRouter(props: Props) {
       />
       <Route
         path="admin-dashboard"
-        element={<ProtectedRoute element={<AdminDashboard />} />}
+        element={<AdminRoute element={<AdminDashboard />} />}
       />
       <Route path="/" element={<LoginScreen />} />
+      <Route path="*" element={<Typography>NOT FOUND</Typography>} />
     </Routes>
   );
 }

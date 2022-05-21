@@ -31,6 +31,19 @@ namespace server.API.Controllers
         }
 
         [HttpGet]
+        [Route("user/{id}")]
+        public IActionResult GetByUserId(int id)
+        {
+            var favorites = _favoriteService.GetByUserId(id);
+            if (favorites == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(favorites);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
 

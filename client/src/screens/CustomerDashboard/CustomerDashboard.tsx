@@ -3,26 +3,31 @@ import TabList from "@mui/lab/TabList";
 import { Box, Tab } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "../../components/SerchBar/SearchBar";
 import { getCarsAction } from "../../stores/car/actions";
-import { useAppDispatch } from "../../stores/store";
-import { logout } from "../../stores/user/slice";
+import { useAppDispatch, useAppSelector } from "../../stores/store";
+import { initUserData } from "../../stores/user/actions";
+import { logout, setSearchInput } from "../../stores/user/slice";
 import CustomerAppointments from "./Appointments/CustomerAppointments";
 import CarsNavigator from "./Cars/CarsNavigator";
-import CustomerCars from "./Cars/CustomerCars";
-import CustomerFavorites from "./Favorites/CustomerFavorites";
+import FavoritesNavigator from "./Favorites/FavoritesNavigator";
 
 const CustomerDashboard = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [currentRoute, setCurrentRoute] = React.useState("/dashboard/cars");
+  const userId = useAppSelector((state) => state.user.user.id);
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setCurrentRoute(newValue);
+    dispatch(setSearchInput(""));
     navigate(newValue);
   };
 
   React.useEffect(() => {
+    navigate("/dashboard/cars");
     dispatch(getCarsAction());
+    dispatch(initUserData(userId));
   }, []);
 
   return (
@@ -42,6 +47,9 @@ const CustomerDashboard = () => {
               <Tab label="Appointments" value="/dashboard/appointments" />
               <Tab label="Favorites" value="/dashboard/favorites" />
             </TabList>
+            <Box display="flex" alignItems="center">
+              <SearchBar />
+            </Box>
             <button onClick={() => dispatch(logout())}>logout</button>
           </Box>
           <TabPanel value="/dashboard/cars">
@@ -51,7 +59,7 @@ const CustomerDashboard = () => {
             <CustomerAppointments />
           </TabPanel>
           <TabPanel value="/dashboard/favorites">
-            <CustomerFavorites />
+            <FavoritesNavigator />
           </TabPanel>
         </TabContext>
       </Box>

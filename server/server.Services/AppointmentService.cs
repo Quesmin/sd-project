@@ -67,6 +67,18 @@ namespace server.Services
             return _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(e => e.Id == id);
         }
 
+        public IEnumerable<Appointment> GetByUserId(int userId)
+        {
+            var user = _context.Users.FirstOrDefault();
+            
+            if (user == null)
+            {
+                return null;
+            }
+
+            return _context.Appointments.Where(e => e.User.Id == userId).ToList();
+        }
+
         public async Task<Appointment> Update(int id, CreateAppointmentDto appointmentDto)
         {
             var appointment = _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(e => e.Id == id);
