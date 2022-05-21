@@ -45,6 +45,20 @@ export const setFavoritesCaseReducer = (
   state.favorites = action.payload;
 };
 
+export const setCarModalCaseReducer = (
+  state: UserState,
+  action: PayloadAction<boolean>
+) => {
+  state.isCarModalOpen = action.payload;
+};
+
+export const setAppModalCaseReducer = (
+  state: UserState,
+  action: PayloadAction<boolean>
+) => {
+  state.isAppModalOpen = action.payload;
+};
+
 export const addFavoriteCaseReducer = (
   state: UserState,
   action: PayloadAction<Favorite>
@@ -56,7 +70,7 @@ export const removeFavoriteCaseReducer = (
   state: UserState,
   action: PayloadAction<number>
 ) => {
-  state.favorites = state.favorites.filter((e) => e.id != action.payload);
+  state.favorites = state.favorites.filter((e) => e.id !== action.payload);
 };
 
 export const addAppointmentCaseReducer = (

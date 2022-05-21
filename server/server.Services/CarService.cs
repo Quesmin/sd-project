@@ -83,7 +83,7 @@ namespace server.Services
             _context.Entry(car).CurrentValues.SetValues(carDto);
             await _context.SaveChangesAsync();
 
-            return car;
+            return _context.Cars.Include(e => e.Manufacturer).FirstOrDefault(e => e.Id == id);
         }
     }
 }

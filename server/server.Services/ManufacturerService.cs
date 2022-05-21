@@ -67,7 +67,7 @@ namespace server.Services
             _context.Entry(manufacturer).CurrentValues.SetValues(manufacturerDto);
             await _context.SaveChangesAsync();
 
-            return manufacturer;
+            return _context.Manufacturers.FirstOrDefault(e => e.Id == id);
         }
     }
 }

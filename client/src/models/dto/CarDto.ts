@@ -1,6 +1,6 @@
 import { BodyType } from "../enums/BodyType";
 import { FuelType } from "../enums/FuelType";
-import { ManunfacturerDto } from "./ManufacturerDto";
+import { ManufacturerDto } from "./ManufacturerDto";
 
 export interface CarDto {
   model: string;
@@ -11,7 +11,7 @@ export interface CarDto {
   weight: number;
   vin: string;
   hp: number;
-  yearOFManufacturer: number;
+  yearOfManufacture: number;
   price: number;
   fuelType: FuelType;
 }

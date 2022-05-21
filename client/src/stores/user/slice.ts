@@ -5,7 +5,9 @@ import {
   loginCaseReducer,
   logoutCaseReducer,
   removeFavoriteCaseReducer,
+  setAppModalCaseReducer,
   setAppointmentsCaseReducer,
+  setCarModalCaseReducer,
   setFavoritesCaseReducer,
   setIsInputErrorCaseReducer,
   setSearchInputCaseReducer,
@@ -25,6 +27,8 @@ const UserReducerSlice = createSlice({
     addFavorite: addFavoriteCaseReducer,
     removeFavorite: removeFavoriteCaseReducer,
     addAppointment: addAppointmentCaseReducer,
+    setCarModal: setCarModalCaseReducer,
+    setAppModal: setAppModalCaseReducer,
   },
 });
 
@@ -38,6 +42,8 @@ export const {
   addFavorite,
   removeFavorite,
   addAppointment,
+  setCarModal,
+  setAppModal,
 } = UserReducerSlice.actions;
 
 export const UserReducer = UserReducerSlice.reducer;

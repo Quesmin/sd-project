@@ -1,18 +1,18 @@
 import { BodyType } from "../enums/BodyType";
 import { FuelType } from "../enums/FuelType";
-import { Manunfacturer } from "./Manufacturer";
+import { Manufacturer } from "./Manufacturer";
 
 export interface Car {
   id: number;
   model: string;
-  manufacturer: Manunfacturer;
+  manufacturer: Manufacturer;
   body: BodyType;
   mileage: number;
   seats: number;
   weight: number;
   vin: string;
   hp: number;
-  yearOFManufacturer: number;
+  yearOfManufacture: number;
   price: number;
   fuelType: FuelType;
 }

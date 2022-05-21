@@ -90,7 +90,7 @@ namespace server.Services
             _context.Entry(appointment).CurrentValues.SetValues(appointmentDto);
             await _context.SaveChangesAsync();
 
-            return appointment;
+            return _context.Appointments.Include(e => e.Car).Include(e => e.User).FirstOrDefault(e => e.Id == id);
         }
     }
 }

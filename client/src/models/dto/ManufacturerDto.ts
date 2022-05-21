@@ -1,3 +1,3 @@
-export interface ManunfacturerDto {
+export interface ManufacturerDto {
   name: string;
 }

@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setCarsCaseReducer, setCurrentCarCaseReducer } from "./reducers";
+import {
+  addCarCaseReducer,
+  deleteCarCaseReducer,
+  setCarsCaseReducer,
+  setCurrentCarCaseReducer,
+  updateCarCaseReducer,
+} from "./reducers";
 import { carInitialState } from "./state";
 
 const CarReducerSlice = createSlice({
@@ -8,9 +14,13 @@ const CarReducerSlice = createSlice({
   reducers: {
     setCars: setCarsCaseReducer,
     setCurrentCar: setCurrentCarCaseReducer,
+    deleteCar: deleteCarCaseReducer,
+    addCar: addCarCaseReducer,
+    updateCar: updateCarCaseReducer,
   },
 });
 
-export const { setCars, setCurrentCar } = CarReducerSlice.actions;
+export const { setCars, setCurrentCar, deleteCar, addCar, updateCar } =
+  CarReducerSlice.actions;
 
 export const CarReducer = CarReducerSlice.reducer;

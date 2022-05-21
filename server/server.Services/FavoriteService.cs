@@ -89,7 +89,7 @@ namespace server.Services
             _context.Entry(favorite).CurrentValues.SetValues(favoriteDto);
             await _context.SaveChangesAsync();
 
-            return favorite;
+            return _context.Favorites.FirstOrDefault(e => e.Id == id);
         }
     }
 }

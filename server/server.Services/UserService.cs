@@ -149,7 +149,7 @@ namespace server.Services
             _context.Remove(user);
             await _context.SaveChangesAsync();
 
-            return user;
+            return _context.Users.FirstOrDefault(e => e.Id == id);
         }
     }
 }

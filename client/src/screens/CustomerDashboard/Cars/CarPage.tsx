@@ -191,7 +191,7 @@ const CarPage = () => {
             <Typography gutterBottom variant="h5" fontWeight={900}>
               Year of manufacture
             </Typography>
-            <Typography>{currentCar.yearOFManufacturer}</Typography>
+            <Typography>{currentCar.yearOfManufacture}</Typography>
           </Box>
         </CardContent>
         <CardActions>
