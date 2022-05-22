@@ -80,10 +80,11 @@ namespace server.Services
                 return null;
             }
 
-            _context.Entry(car).CurrentValues.SetValues(carDto);
+            car.Manufacturer = await _context.Manufacturers.FirstOrDefaultAsync(x => x.Id == carDto.ManufacturerId);
+            _context.Update(car);
             await _context.SaveChangesAsync();
 
-            return _context.Cars.Include(e => e.Manufacturer).FirstOrDefault(e => e.Id == id);
+            return car;
         }
     }
 }

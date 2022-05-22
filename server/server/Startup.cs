@@ -1,22 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using server.API.MiddlewareExtensions;
 using server.Data;
-using server.Interfaces;
-using server.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using server.API.Middleware;
 
 namespace server
 {
@@ -36,7 +28,7 @@ namespace server
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 
             services.AddDbContext<DataContext>(options => 
-                options.UseMySql(connectionString, serverVersion)
+                options.UseMySql(connectionString, serverVersion), ServiceLifetime.Scoped, ServiceLifetime.Scoped
             );
             services.InjectServices();
             services.AddControllers();
@@ -44,6 +36,8 @@ namespace server
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "server", Version = "v1" });
             });
+
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +60,7 @@ namespace server
                 x.AllowAnyMethod();
             });
 
+            app.UseMiddleware<RequestLoggingMiddleware>();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

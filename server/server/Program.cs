@@ -21,6 +21,7 @@ namespace server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            .ConfigureLogging(logger => logger.AddConsole().SetMinimumLevel(LogLevel.Information));
     }
 }

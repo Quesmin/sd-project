@@ -19,7 +19,9 @@ C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Services.dll
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Services.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Common.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Data.dll
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Interfaces.dll
+C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Data.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Interfaces.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Common.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.csproj.AssemblyReference.cache
@@ -32,5 +34,3 @@ C:\Users\cosmi\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\refint\server.Services.dll
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\server.Services.pdb
 C:\Users\cosmi\Desktop\sd-project\server\server.Services\obj\Debug\net5.0\ref\server.Services.dll
-C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Data.dll
-C:\Users\cosmi\Desktop\sd-project\server\server.Services\bin\Debug\net5.0\server.Data.pdb
